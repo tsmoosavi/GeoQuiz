@@ -2,4 +2,11 @@
     <string name="app_name">GeoQuiz</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="True">TRUE</string>
+    <string name="False">FALSE</string>
+    <string name="cheat">CHEAT!</string>
+    <string name="prev">PREV</string>
+    <string name="next">NEXT</string>
+    <string name="showAnswer">SHOW ANSWER</string>
+    <string name="cheatCheck">Are you sure you want to do this?</string>
 </resources>

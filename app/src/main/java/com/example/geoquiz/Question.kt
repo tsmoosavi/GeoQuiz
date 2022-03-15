@@ -1,9 +1,9 @@
 package com.example.geoquiz
 
-class Question(question:String, answer:Boolean, cheat:Boolean) {}
+class Question(var question:String, var answer:Boolean, var cheat:Boolean) {}
 
-object tenQuestions{
-    var q1 =Question("Beijing is the capital of China",true,false,)
+object TenQuestions{
+    var q1 = Question("Beijing is the capital of China",true,false,)
     var q2 =Question("Oslo is the capital of Brazil",false , false)
     var q3 =Question("Norway is on the American continent",false , false)
     var q4 =Question("Djibouti is on the African continent",true,false,)
@@ -14,4 +14,5 @@ object tenQuestions{
     var q9 =Question("Antarctica is the largest country in the world" , false, false)
     var q10 =Question("Russia is the third largest country in the world",false,false)
     var questionList = arrayListOf<Question>(q1,q2,q3,q4,q5,q6,q7,q8,q9,q10)
+
 }

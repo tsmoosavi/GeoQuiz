@@ -30,9 +30,10 @@ class QuestionFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         var index = questionVm.i
         binding.questionBox.text = questionVm.qList[index].question
-//        initViews()
-//        binding.prevButton.isEnabled = index != 0
-//        binding.nextButton.isEnabled = index != 9
+        if (questionVm.qList[index].isAnswerd){
+            binding.truebuttton.isEnabled = false
+            binding.falseButton.isEnabled = false
+        }
         binding.prevButton.setOnClickListener{
             if(index != 0){
                 index--
@@ -75,6 +76,37 @@ class QuestionFragment : Fragment() {
             var action = QuestionFragmentDirections.actionQuestionFragmentToCheatFragment(index)
             findNavController().navigate(action)
         }
+        binding.falseButton.setOnClickListener{
+            questionVm.qList[index].isAnswerd = true
+            binding.falseButton.isEnabled = false
+            binding.truebuttton.isEnabled = false
+            binding.cheatButton.isEnabled = false
+            if(questionVm.qList[index].ischeated){
+                Toast.makeText(context, "Cheating is wrong!", Toast.LENGTH_SHORT).show()
+            }else{
+            }
+            if (questionVm.qList[index].answer){
+                Toast.makeText(context, "Incorrect", Toast.LENGTH_SHORT).show()
+            }else {
+                Toast.makeText(context, "Correct", Toast.LENGTH_SHORT).show()
+            }
+        }
+        binding.truebuttton.setOnClickListener{
+            questionVm.qList[index].isAnswerd = true
+            binding.falseButton.isEnabled = false
+            binding.truebuttton.isEnabled = false
+            binding.cheatButton.isEnabled = false
+            if(questionVm.qList[index].ischeated){
+                Toast.makeText(context, "Cheating is wrong!", Toast.LENGTH_SHORT).show()
+            }else{
+                if (questionVm.qList[index].answer){
+                    Toast.makeText(context, "Correct", Toast.LENGTH_SHORT).show()
+                }else{
+                    Toast.makeText(context, "Incorrect", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+
 
     }
 }

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.geoquiz.databinding.FragmentCheatBinding
 
@@ -29,10 +30,12 @@ class CheatFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        questionVm.i = args.index
         binding.showAnswerBtn.setOnClickListener{
             var qIndex = args.index
             questionVm.qList[qIndex].ischeated = true
             binding.textView.text = questionVm.qList[qIndex].answer.toString()
         }
+
     }
 }

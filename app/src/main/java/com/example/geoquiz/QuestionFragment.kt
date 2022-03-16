@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.geoquiz.databinding.FragmentQuestionBinding
 
 class QuestionFragment : Fragment() {
@@ -70,5 +71,10 @@ class QuestionFragment : Fragment() {
             }
 
         }
+        binding.cheatButton.setOnClickListener{
+            var action = QuestionFragmentDirections.actionQuestionFragmentToCheatFragment(index)
+            findNavController().navigate(action)
+        }
+
     }
 }

@@ -18,5 +18,9 @@
         android:id="@+id/cheatFragment"
         android:name="com.example.geoquiz.CheatFragment"
         android:label="fragment_cheat"
-        tools:layout="@layout/fragment_cheat" />
+        tools:layout="@layout/fragment_cheat" >
+        <argument
+            android:name="index"
+            app:argType="integer" />
+    </fragment>
 </navigation>

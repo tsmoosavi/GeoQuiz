@@ -1,6 +1,8 @@
 package com.example.geoquiz
 
-class Question(var question:String, var answer:Boolean, var cheat:Boolean) {}
+class Question(var question:String, var answer:Boolean, var  ischeated:Boolean) {
+    var isAnswerd : Boolean= false
+}
 
 object TenQuestions{
     var q1 = Question("Beijing is the capital of China",true,false,)

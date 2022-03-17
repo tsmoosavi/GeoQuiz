@@ -6,13 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.geoquiz.databinding.FragmentQuestionBinding
 
 class QuestionFragment : Fragment() {
+
     lateinit var binding: FragmentQuestionBinding
-    val questionVm : QuestionVM by viewModels()
+    val questionVm : QuestionVM by activityViewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -38,6 +40,7 @@ class QuestionFragment : Fragment() {
             if(index != 0){
                 index--
             }
+//            questionVm.addnumber(index)
             binding.questionBox.text = questionVm.qList[index].question
             binding.prevButton.isEnabled = index != 0
             binding.nextButton.isEnabled =  true
@@ -56,6 +59,7 @@ class QuestionFragment : Fragment() {
         }
         binding.nextButton.setOnClickListener{
             index++
+
             binding.questionBox.text = questionVm.qList[index].question
             binding.nextButton.isEnabled = index != 9
             binding.prevButton.isEnabled =  true
